@@ -14,6 +14,7 @@
  */
 var pet = "turtle 🐢"
 
+//Type: String
 
 
 
@@ -25,14 +26,14 @@ var pet = "turtle 🐢"
 var petName: String?
 
 
-
+//Type: Optional String
 
 
 
 /*: question3
  ### 3. Currently, what is the _value_ of `petName`?
  */
-
+//nil
 
 
 
@@ -45,7 +46,9 @@ var petName: String?
 // write your code here
 
 
+petName = "Nabi"
 
+// the type is still an optional string.
 
 
 
@@ -56,7 +59,9 @@ var petName: String?
 // write your code here
 
 
+print(petName)
 
+//I expect to see Optional("Nabi") in the console.
 
 
 
@@ -66,6 +71,13 @@ var petName: String?
  */
 // write your code here
 
+if petName != nil{
+    print(petName)
+} else {
+    print("There is no pet name.")
+}
+    
+// I expet to see Optional("Nabi") in the console.
 
 
 
@@ -78,9 +90,11 @@ var petName: String?
 // write your code here
 
 
+if let petName = petName {
+    print("\(petName)")
+}
 
-
-
+//To unwrap an Optional, you use a Swift feature called optional binding. In optional binding, you check to see if a value exists (is not nil) and set it equal to a constant. That constant is now available for use within the first branch of the if statement. More important, it is bound to the actual value wrapped by the Optional.
 
 
 /*: question8
@@ -90,7 +104,9 @@ var anotherPetName: String?
 // write your code here
 
 
-
+if anotherPetName == nil {
+    print("The value of anotherPetName is nil")
+}
 
 
 
@@ -100,7 +116,11 @@ var anotherPetName: String?
  */
 // write your code here
 
-
+if let anotherPetName = anotherPetName {
+    print("\(anotherPetName)")
+} else {
+    print("anotherPetName has no value")
+}
 
 
 
@@ -113,7 +133,13 @@ var anotherPetName: String?
  */
 // write your code here
 
+let iPhoneVersion:String?
 
+iPhoneVersion = "iPhone 6"
+
+print(iPhoneVersion)
+
+//When printing out the constant, I see Optional("iPhone 6") in the console.
 
 
 
@@ -125,6 +151,13 @@ var anotherPetName: String?
  ### 11. Declare another _constant_ optional string, and set it to `nil` immediately. Then, on the next line, assign a string value to it. What happens?
  */
 // write your code here
+
+
+let iPadVersion:String? = nil
+
+iPadVersion = "iPad mini"
+
+//error. 
 
 
 
